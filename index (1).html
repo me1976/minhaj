@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل المنهاج - مدرسة أبي بكر الصديق الأساسية للبنين </title>
+    <style>
+        :root { --primary: #800020; --secondary: #1d4ed8; --bg: #f8fafc; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; margin: 0; }
+        .card { max-width: 550px; background: white; margin: auto; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 10px solid var(--primary); }
+        h2 { text-align: center; color: var(--secondary); margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8 swpx; font-weight: 600; color: #444; }
+        select, input { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 16px; transition: 0.3s; box-sizing: border-box; }
+        select:focus, input:focus { border-color: var(--primary); outline: none; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        button { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #600018; transform: translateY(-2px); }
+        button:disabled { background: #ccc; }
+        .footer { text-align: center; margin-top: 20px; font-size: 13px; color: #64748b; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>مدرسة أبي بكر الصديق الأساسية للبنين /سجل ما قطع من المنهاج</h2>
+    <form id="syllabusForm">
+        <label>اسم المعلم:</label>
+        <select name="teacherName" id="teacherName" required>
+            <option value="">-- اختر اسمك --</option>
+            <option>احمد عبد الجليل احمد شدايده</option><option>احمد عبد اللطيف اسعد سعاده</option><option>احمد مفلح قبلان العليمات</option><option>انس اكرم الشيخ احمد احمد</option><option>ايمن عقله علي الحراحشه</option><option>حازم  جميل اشبيلات</option><option>محمد عزام المساعيد</option><option>خير الله احمد حصاد المشاقبة</option><option>عبد اللطيف احمد عليمات</option><option>عبد الله احمد عليمات</option><option>عبدالله محمود علي السرديه</option><option>عدنان عقله علي الحراحشه</option><option>علي اسماعيل فارس عليوي</option><option>علي محمد علي العرقان</option><option>كامل خميس سالم ابو جراد</option><option>ماهر مصطفى محمد عليمات</option><option>مأمون عبد الله خالد الحسبان</option><option>محمد احمد عليان الخزاعله</option><option>محمد جميل يونس الزغارنه</option><option>محمد علي محمد المغربي</option><option>محمد مجد محمد سليمان ابو عويضه</option><option>معاذ محمد فارس النميرات</option><option>معتصم امين علي الخزاعله</option><option>موفق سليمان راشد الشديفات</option><option>هشام عاسر حمدان الرمثان</option><option>وصفي حسني خليف السلامه</option><option>وليد احمد عوده العسيلي</option>
+        </select>
+
+        <div class="grid">
+            <div>
+                <label>الصف والشعبة:</label>
+                <select name="className" id="className" onchange="updateSubjects()" required>
+                    <option value="">-- اختر --</option>
+                    <option>الثاني</option><option>الثالث</option>
+                    <option>الرابع أ</option><option>الرابع ب</option>
+                    <option>الخامس أ</option><option>الخامس ب</option><option>الخامس ج</option>
+                    <option>السادس أ</option><option>السادس ب</option><option>السادس ج</option>
+                    <option>السابع أ</option><option>السابع ب</option><option>السابع ج</option>
+                    <option>الثامن أ</option><option>الثامن ب</option><option>الثامن ج</option>
+                </select>
+            </div>
+            <div>
+                <label>الشهر:</label>
+                <select name="month" required>
+                    <option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                    <option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option>
+                </select>
+            </div>
+        </div>
+
+        <label>المادة:</label>
+        <select name="subject" id="subject" required>
+            <option value="">-- اختر الصف أولاً --</option>
+        </select>
+
+        <label>عدد صفحات الكتاب الكلي:</label>
+        <input type="number" name="totalPdfPages" placeholder="مثلاً: 140" required>
+
+        <div class="grid">
+            <div>
+                <label>من صفحة:</label>
+                <input type="number" name="fromPage" placeholder="0" required>
+            </div>
+            <div>
+                <label>إلى صفحة:</label>
+                <input type="number" name="toPage" placeholder="15" required>
+            </div>
+        </div>
+
+        <label>الحالة:</label>
+        <select name="note" required>
+            <option>مناسب</option>
+            <option>غير مناسب</option>
+        </select>
+
+        <button type="submit" id="submitBtn">إرسال البيانات</button>
+    </form>
+    <div class="footer"> مدرسة أبو بكر الصديق الأساسية للبنين</div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwWsWxk9l6iaw6ZXetiI0S2c2U1pFpb8fE0_8GhjDBMgqk0upeqtIyHb6ckp_OuDKEn/exec'; 
+
+    function updateSubjects() {
+        const classSelect = document.getElementById('className').value;
+        const subjectSelect = document.getElementById('subject');
+        subjectSelect.innerHTML = '<option value="">-- اختر المادة --</option>';
+        
+        let subjects = [];
+        if (classSelect === "الثاني" || classSelect === "الثالث") {
+            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "العلوم"];
+        } else if (["الرابع أ", "الرابع ب", "الخامس أ", "الخامس ب", "الخامس ج", "السادس أ", "السادس ب", "السادس ج"].includes(classSelect)) {
+            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني"];
+        } else if (classSelect.includes("السابع") || classSelect.includes("الثامن")) {
+            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "ثقافة مالية", "مهارات رقمية"];
+        }
+
+        subjects.forEach(s => {
+            let opt = document.createElement('option');
+            opt.value = s; opt.innerHTML = s;
+            subjectSelect.appendChild(opt);
+        });
+    }
+
+    form = document.getElementById('syllabusForm');
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        btn.disabled = true; btn.innerText = "جاري الحفظ...";
+
+        fetch(scriptURL, { 
+            method: 'POST', 
+            mode: 'no-cors', 
+            body: JSON.stringify(Object.fromEntries(new FormData(form).entries())) 
+        })
+        .then(() => {
+            alert('تم الحفظ بنجاح في سجل ' + document.getElementById('className').value);
+            form.reset(); btn.disabled = false; btn.innerText = "إرسال البيانات";
+        })
+        .catch(() => { alert('خطأ في الاتصال!'); btn.disabled = false; });
+    });
+</script>
+</body>
+</html>
