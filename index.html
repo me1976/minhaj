@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سجل المنهاج - مدرسة أبي بكر الصديق الأساسية للبنين </title>
+    <title>سجل المنهاج - مدرسة أبي بكر الصديق الأساسية للبنين</title>
     <style>
         :root { --primary: #800020; --secondary: #1d4ed8; --bg: #f8fafc; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); padding: 20px; margin: 0; }
         .card { max-width: 550px; background: white; margin: auto; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 10px solid var(--primary); }
         h2 { text-align: center; color: var(--secondary); margin-bottom: 25px; }
-        label { display: block; margin-bottom: 8 swpx; font-weight: 600; color: #444; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #444; }
         select, input { width: 100%; padding: 12px; margin-bottom: 20px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 16px; transition: 0.3s; box-sizing: border-box; }
         select:focus, input:focus { border-color: var(--primary); outline: none; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -22,12 +22,39 @@
 <body>
 
 <div class="card">
-    <h2>مدرسة أبي بكر الصديق الأساسية للبنين /سجل ما قطع من المنهاج</h2>
+    <h2>مدرسة أبي بكر الصديق الأساسية للبنين / سجل ما قطع من المنهاج</h2>
     <form id="syllabusForm">
         <label>اسم المعلم:</label>
         <select name="teacherName" id="teacherName" required>
             <option value="">-- اختر اسمك --</option>
-            <option>احمد عبد الجليل احمد شدايده</option><option>احمد عبد اللطيف اسعد سعاده</option><option>احمد مفلح قبلان العليمات</option><option>انس اكرم الشيخ احمد احمد</option><option>ايمن عقله علي الحراحشه</option><option>حازم  جميل اشبيلات</option><option>محمد عزام المساعيد</option><option>خير الله احمد حصاد المشاقبة</option><option>عبد اللطيف احمد عليمات</option><option>عبد الله احمد عليمات</option><option>عبدالله محمود علي السرديه</option><option>عدنان عقله علي الحراحشه</option><option>علي اسماعيل فارس عليوي</option><option>علي محمد علي العرقان</option><option>كامل خميس سالم ابو جراد</option><option>ماهر مصطفى محمد عليمات</option><option>مأمون عبد الله خالد الحسبان</option><option>محمد احمد عليان الخزاعله</option><option>محمد جميل يونس الزغارنه</option><option>محمد علي محمد المغربي</option><option>محمد مجد محمد سليمان ابو عويضه</option><option>معاذ محمد فارس النميرات</option><option>معتصم امين علي الخزاعله</option><option>موفق سليمان راشد الشديفات</option><option>هشام عاسر حمدان الرمثان</option><option>وصفي حسني خليف السلامه</option><option>وليد احمد عوده العسيلي</option>
+            <option>أحمد عبد الجليل أحمد شدايدة</option>
+            <option>أحمد عبد اللطيف أسعد سعادة</option>
+            <option>أحمد مفلح قبلان العليمات</option>
+            <option>أنس أكرم الشيخ أحمد أحمد</option>
+            <option>أيمن عقلة علي الحراحشة</option>
+            <option>باسم الجابر</option>
+            <option>حازم جميل اشبيلات</option>
+            <option>خير الله أحمد حصاد المشاقبة</option>
+            <option>عبد اللطيف أحمد عليمات</option>
+            <option>عبد الله أحمد عليمات</option>
+            <option>عبدالله محمود علي السردية</option>
+            <option>عدنان عقلة علي الحراحشة</option>
+            <option>علي إسماعيل فارس عليوي</option>
+            <option>علي محمد علي العرقان</option>
+            <option>عمار المناصرة</option>
+            <option>كامل خميس سالم أبو جراد</option>
+            <option>ماهر مصطفى محمد عليمات</option>
+            <option>محمد أحمد عليان الخزاعلة</option>
+            <option>محمد جميل يونس الزغارنة</option>
+            <option>محمد علي محمد المغربي</option>
+            <option>محمد مجد محمد سليمان أبو عويضة</option>
+            <option>محمد عزام المساعيد</option>
+            <option>معاذ محمد فارس النميرات</option>
+            <option>معتصم أمين علي الخزاعلة</option>
+            <option>موفق سليمان راشد الشديفات</option>
+            <option>هشام عاسر حمدان الرمثان</option>
+            <option>وصفي حسني خليف السلامة</option>
+            <option>وليد أحمد عودة العسيلي</option>
         </select>
 
         <div class="grid">
@@ -57,25 +84,26 @@
             <option value="">-- اختر الصف أولاً --</option>
         </select>
 
-        <label>عدد صفحات الكتاب الكلي:</label>
-        <input type="number" name="totalPdfPages" placeholder="مثلاً: 140" required>
-
         <div class="grid">
             <div>
-                <label>من صفحة:</label>
-                <input type="number" name="fromPage" placeholder="0" required>
+                <label>عدد الصفحات الكلي:</label>
+                <input type="number" id="totalPdfPages" name="totalPdfPages" placeholder="مثلاً: 140" required>
             </div>
             <div>
-                <label>إلى صفحة:</label>
-                <input type="number" name="toPage" placeholder="15" required>
+                <label>عدد الصفحات المقطوعة:</label>
+                <input type="number" id="completedPages" name="completedPages" placeholder="مثلاً: 15" required>
             </div>
         </div>
 
         <label>الحالة:</label>
         <select name="note" required>
             <option>مناسب</option>
-            <option>غير مناسب</option>
+            <option>متقدم</option>
+            <option>متأخر</option>
         </select>
+
+        <!-- حقل مخفي لإرسال النسبة المئوية -->
+        <input type="hidden" id="percentage" name="percentage">
 
         <button type="submit" id="submitBtn">إرسال البيانات</button>
     </form>
@@ -83,7 +111,8 @@
 </div>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwWsWxk9l6iaw6ZXetiI0S2c2U1pFpb8fE0_8GhjDBMgqk0upeqtIyHb6ckp_OuDKEn/exec'; 
+    // **مهم جداً: ضع رابط الـ Web App الخاص بك هنا**
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwUtsNH_HHFEqA1CPyyLIpnszzxJFTnbhPWm8JyrZKFkIrDfn_Cp67s7WuSUhBLudmA/exec'; 
 
     function updateSubjects() {
         const classSelect = document.getElementById('className').value;
@@ -94,9 +123,9 @@
         if (classSelect === "الثاني" || classSelect === "الثالث") {
             subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "العلوم"];
         } else if (["الرابع أ", "الرابع ب", "الخامس أ", "الخامس ب", "الخامس ج", "السادس أ", "السادس ب", "السادس ج"].includes(classSelect)) {
-            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني"];
+            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "فن", "رياضة"];
         } else if (classSelect.includes("السابع") || classSelect.includes("الثامن")) {
-            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "ثقافة مالية", "مهارات رقمية"];
+            subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "ثقافة مالية", "مهارات رقمية", "فن", "رياضة"];
         }
 
         subjects.forEach(s => {
@@ -106,11 +135,25 @@
         });
     }
 
-    form = document.getElementById('syllabusForm');
+    const form = document.getElementById('syllabusForm');
     form.addEventListener('submit', e => {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
-        btn.disabled = true; btn.innerText = "جاري الحفظ...";
+        btn.disabled = true; 
+        btn.innerText = "جاري الحفظ...";
+
+        // حساب النسبة المئوية قبل الإرسال
+        const totalPages = parseFloat(document.getElementById('totalPdfPages').value);
+        const completedPages = parseFloat(document.getElementById('completedPages').value);
+        let calculatedPercentage = 0;
+
+        if (totalPages > 0 && !isNaN(completedPages)) {
+            calculatedPercentage = (completedPages / totalPages) * 100;
+            // تخزين النسبة في الحقل المخفي ليتم إرسالها مع النموذج
+            document.getElementById('percentage').value = calculatedPercentage.toFixed(2) + "%";
+        } else {
+            document.getElementById('percentage').value = "خطأ في الإدخال";
+        }
 
         fetch(scriptURL, { 
             method: 'POST', 
@@ -119,9 +162,15 @@
         })
         .then(() => {
             alert('تم الحفظ بنجاح في سجل ' + document.getElementById('className').value);
-            form.reset(); btn.disabled = false; btn.innerText = "إرسال البيانات";
+            form.reset(); 
+            btn.disabled = false; 
+            btn.innerText = "إرسال البيانات";
         })
-        .catch(() => { alert('خطأ في الاتصال!'); btn.disabled = false; });
+        .catch(() => { 
+            alert('خطأ في الاتصال!'); 
+            btn.disabled = false; 
+            btn.innerText = "إرسال البيانات";
+        });
     });
 </script>
 </body>
