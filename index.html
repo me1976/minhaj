@@ -59,15 +59,16 @@
 
         <div class="grid">
             <div>
-                <label>الصف والشعبة:</label>
+                <label>الصف:</label>
                 <select name="className" id="className" onchange="updateSubjects()" required>
-                    <option value="">-- اختر --</option>
-                    <option>الثاني</option><option>الثالث</option>
-                    <option>الرابع أ</option><option>الرابع ب</option>
-                    <option>الخامس أ</option><option>الخامس ب</option><option>الخامس ج</option>
-                    <option>السادس أ</option><option>السادس ب</option><option>السادس ج</option>
-                    <option>السابع أ</option><option>السابع ب</option><option>السابع ج</option>
-                    <option>الثامن أ</option><option>الثامن ب</option><option>الثامن ج</option>
+                    <option value="">-- اختر الصف --</option>
+                    <option value="الثاني">الثاني</option>
+                    <option value="الثالث">الثالث</option>
+                    <option value="الرابع">الرابع</option>
+                    <option value="الخامس">الخامس</option>
+                    <option value="السادس">السادس</option>
+                    <option value="السابع">السابع</option>
+                    <option value="الثامن">الثامن</option>
                 </select>
             </div>
             <div>
@@ -111,7 +112,7 @@
 </div>
 
 <script>
-    // **مهم جداً: ضع رابط الـ Web App الخاص بك هنا**
+    // رابط تطبيق الويب الخاص بـ Google Apps Script
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwUtsNH_HHFEqA1CPyyLIpnszzxJFTnbhPWm8JyrZKFkIrDfn_Cp67s7WuSUhBLudmA/exec'; 
 
     function updateSubjects() {
@@ -122,15 +123,16 @@
         let subjects = [];
         if (classSelect === "الثاني" || classSelect === "الثالث") {
             subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "العلوم"];
-        } else if (["الرابع أ", "الرابع ب", "الخامس أ", "الخامس ب", "الخامس ج", "السادس أ", "السادس ب", "السادس ج"].includes(classSelect)) {
+        } else if (classSelect === "الرابع" || classSelect === "الخامس" || classSelect === "السادس") {
             subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "فن", "رياضة"];
-        } else if (classSelect.includes("السابع") || classSelect.includes("الثامن")) {
+        } else if (classSelect === "السابع" || classSelect === "الثامن") {
             subjects = ["التربية الاسلامية", "اللغة العربية", "اللغة الانجليزية", "الرياضيات", "الدراسات الاجتماعية", "العلوم", "المهني", "ثقافة مالية", "مهارات رقمية", "فن", "رياضة"];
         }
 
         subjects.forEach(s => {
             let opt = document.createElement('option');
-            opt.value = s; opt.innerHTML = s;
+            opt.value = s;
+            opt.textContent = s;
             subjectSelect.appendChild(opt);
         });
     }
@@ -149,7 +151,6 @@
 
         if (totalPages > 0 && !isNaN(completedPages)) {
             calculatedPercentage = (completedPages / totalPages) * 100;
-            // تخزين النسبة في الحقل المخفي ليتم إرسالها مع النموذج
             document.getElementById('percentage').value = calculatedPercentage.toFixed(2) + "%";
         } else {
             document.getElementById('percentage').value = "خطأ في الإدخال";
@@ -161,7 +162,7 @@
             body: JSON.stringify(Object.fromEntries(new FormData(form).entries())) 
         })
         .then(() => {
-            alert('تم الحفظ بنجاح في سجل ' + document.getElementById('className').value);
+            alert('تم الحفظ بنجاح في سجل الصف ' + document.getElementById('className').value);
             form.reset(); 
             btn.disabled = false; 
             btn.innerText = "إرسال البيانات";
